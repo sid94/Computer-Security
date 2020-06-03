@@ -3,7 +3,9 @@ import os
 import string
 import random as r
 
-seed = [77, 102, 86, 124, 81, 104, 90, 70, 120, 93, 79, 84, 67, 111, 95, 73, 80, 83, 85, 114, 82, 100, 123, 115, 105, 66]
+seed = list(range(97,123))
+r.seed(1)
+r.shuffle(seed)
 
 if(not os.path.isfile('in.txt')):
     print("Input file not found")
