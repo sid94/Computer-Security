@@ -9,6 +9,7 @@ r.shuffle(seed)
 
 if(not os.path.isfile('in.txt')):
     print("Input file not found")
+    sys.exit()
 
 def encryption():
       dummyseed =  seed[::-1]
@@ -17,7 +18,7 @@ def encryption():
             charmap[chr(i)] = chr(dummyseed.pop(-1))
             
       for key,val in charmap.items():
-            print("{0}-{1}".format(key,val))
+            print(key+ '-' + val,end=", ")
       
       myfile = open('out.txt', 'w')  
       with open('in.txt') as f:
@@ -39,7 +40,7 @@ def decryption():
             charmap[chr(dummyseed.pop(-1))] = chr(i)
          
       for key,val in charmap.items():
-            print("{0}-{1}".format(key,val))
+            print(key+ '-' + val,end=", ")
             
       myfile = open('in1.txt', 'w')  
       with open('out.txt') as f:
