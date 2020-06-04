@@ -7,7 +7,7 @@ seed = list(range(97,123))
 r.seed(1)
 r.shuffle(seed)
 
-if(not os.path.isfile('in.txt')):
+if(not os.path.isfile('in')):
     print("Input file not found")
     sys.exit()
 
@@ -20,8 +20,8 @@ def encryption():
       for key,val in charmap.items():
             print(key+ '-' + val,end=", ")
       
-      myfile = open('out.txt', 'w')  
-      with open('in.txt') as f:
+      myfile = open('out', 'w')  
+      with open('in') as f:
         while True:
           c = f.read(1)
           if not c:
@@ -30,7 +30,7 @@ def encryption():
           myfile.write("%s" % charmap[c])
           
       myfile.close()
-      print("Content written in the file out.txt")
+      print("Content written in the file out")
       
       
 def decryption():
@@ -42,8 +42,8 @@ def decryption():
       for key,val in charmap.items():
             print(key+ '-' + val,end=", ")
             
-      myfile = open('in1.txt', 'w')  
-      with open('out.txt') as f:
+      myfile = open('in1', 'w')  
+      with open('out') as f:
         while True:
           c = f.read(1)
           if not c:
@@ -52,7 +52,7 @@ def decryption():
           myfile.write("%s" % charmap[c])
           
       myfile.close()
-      print("Content written in the file in1.txt")
+      print("Content written in the file in1")
       
 def main(param):
       if(not len(param) == 3):
@@ -60,16 +60,16 @@ def main(param):
             sys.exit()
             
       if(param[-1] == "1"):
-            assert(os.path.isfile('in.txt') and os.path.isfile('out.txt'))
-            assert(param[0] == "in.txt" and param[1] == "out.txt" and param[2] == "1")
-            f = open('out.txt', 'r+')
+            assert(os.path.isfile('in') and os.path.isfile('out'))
+            assert(param[0] == "in" and param[1] == "out" and param[2] == "1")
+            f = open('out', 'r+')
             f.truncate(0)
             encryption()
             
       if(param[-1] == "0"):
-            assert(os.path.isfile('out.txt') and os.path.isfile('in1.txt'))
-            assert(param[0] == "out.txt" and param[1] == "in1.txt" and param[2] == "0")
-            f = open('in1.txt', 'r+')
+            assert(os.path.isfile('out') and os.path.isfile('in1'))
+            assert(param[0] == "out" and param[1] == "in1" and param[2] == "0")
+            f = open('in1', 'r+')
             f.truncate(0)
             decryption()
             
