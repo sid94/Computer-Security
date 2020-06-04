@@ -2,7 +2,9 @@ import sys
 import os
 import string
 import random as r
+import re
 
+reg = re.compile("[a-zA-Z]")
 seed = list(range(97,123))
 r.seed(1)
 r.shuffle(seed)
@@ -27,7 +29,9 @@ def encryption():
           if not c:
             print("End of file")
             break
-          myfile.write("%s" % charmap[c])
+          if(not reg.match(c)):
+                continue;
+          myfile.write("%s" % charmap[c.lower()])
           
       myfile.close()
       print("Content written in the file out")
@@ -40,7 +44,7 @@ def decryption():
             charmap[chr(dummyseed.pop(-1))] = chr(i)
          
       for key,val in charmap.items():
-            print(key+ '-' + val,end=", ")
+            print(val + '-' + key,end=", ")
             
       myfile = open('in1', 'w')  
       with open('out') as f:
@@ -77,6 +81,8 @@ def main(param):
       
 if __name__ == '__main__':
     main(sys.argv[1:])
+
+
 
 
 
