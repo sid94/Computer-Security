@@ -36,8 +36,7 @@ Anything special about the code
 1. During encryption file in and out should exist 
 
 2. During decryption file out and in1 should exist
-
-3. And the only version to run the program as specified in 4th section 
+ 
 
 
 
