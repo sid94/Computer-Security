@@ -20,7 +20,7 @@ while True:
     if(userid and rawpassword):
         securesocket.send(bytes("I received your id and password","utf-8"))
         securesocket.close()
-        s.close()
+        #s.close()
 
 # #!/bin/usr/env python
 # import socket
