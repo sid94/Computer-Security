@@ -9,9 +9,14 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 securesocket = ssl.wrap_socket(s,ca_certs="cert/skolhap1.pem",cert_reqs=ssl.CERT_REQUIRED)
 securesocket.connect((socket.gethostname(), 1234))
 
+print("Enter User Id")
+userid = input()
+print("Enter User Password")
+password = input()
+
 #send message
-securesocket.send(bytes("sid","utf-8"))
-securesocket.send(bytes("12345","utf-8"))
+securesocket.send(bytes(userid,"utf-8"))
+securesocket.send(bytes(password,"utf-8"))
 
 
 #receive response and print

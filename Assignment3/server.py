@@ -1,9 +1,26 @@
 import socket
 import ssl
+import os
+import sys
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((socket.gethostname(), 1234))
 s.listen(5)
+
+
+password = {}
+def readpasswordFile():
+    if(os.path.isfile('password')):
+        with open("password", "r") as file:
+            for line in file:
+                dummy = line.split()
+                if(dummy[0] not in password):
+                    password[dummy[0]] = dummy[1]
+    else:
+        print("password file does not exists")
+        sys.exit()
+        
+readpasswordFile()
 
 while True:
     # now our endpoint knows about the OTHER endpoint.
@@ -18,9 +35,18 @@ while True:
     print(f"userid :- {userid.decode('utf-8')} , password :- {rawpassword.decode('utf-8')}")
 
     if(userid and rawpassword):
-        securesocket.send(bytes("I received your id and password","utf-8"))
-        securesocket.close()
-        #s.close()
+        print(str(password[userid.decode('utf-8')]))
+        print(str(rawpassword.decode('utf-8')))
+        if(userid.decode('utf-8') in password and password[str(userid.decode('utf-8'))] == str(rawpassword.decode('utf-8'))):
+            securesocket.send(bytes("correct ID and password","utf-8"))
+        else:
+            securesocket.send(bytes("incorrect ID and password","utf-8"))
+               
+    
+    securesocket.close()
+    #s.close()
+        
+        
 
 # #!/bin/usr/env python
 # import socket
