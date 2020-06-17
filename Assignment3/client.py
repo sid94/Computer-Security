@@ -3,10 +3,6 @@ import ssl
 from TCP import Socket
 import sys
 
-#create a socket
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-
 class Client:
     def __init__(self,param):
         tcp =  Socket()
@@ -17,7 +13,7 @@ class Client:
     
     def securesocket(self,param):
         # create and a secure socket using certifcate and connect 
-        securesocket = ssl.wrap_socket(s,ca_certs="cert/skolhap1.pem",cert_reqs=ssl.CERT_REQUIRED)
+        securesocket = ssl.wrap_socket(self.s,ca_certs="cert/skolhap1.pem",cert_reqs=ssl.CERT_REQUIRED)
         securesocket.connect((param[0], 1234))
 
         print("Enter User Id")

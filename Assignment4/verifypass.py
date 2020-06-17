@@ -21,8 +21,7 @@ class VerifyPass:
                 file.close()
         else:
             print("password file doesnt exist!!")
-            return password
-            sys.exit()
+            sys.exit(0)
         return password
     
     def verifypass(self):
