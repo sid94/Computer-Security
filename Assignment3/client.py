@@ -12,10 +12,10 @@ class Client:
         tcp =  Socket()
         self.s = tcp.getSocket()
         
-        self.securesocket()
+        self.securesocket(param)
         
     
-    def securesocket(self):
+    def securesocket(self,param):
         # create and a secure socket using certifcate and connect 
         securesocket = ssl.wrap_socket(s,ca_certs="cert/skolhap1.pem",cert_reqs=ssl.CERT_REQUIRED)
         securesocket.connect((socket.gethostname(), 1234))
@@ -37,4 +37,7 @@ class Client:
         securesocket.close()
 
 if __name__ == '__main__':
-    Client(sys.argv[1:])
+    if(len(sys.argv[1:]) == 1):
+        Client(sys.argv[1:])
+    else:
+        print("Please enter python client.py <host-name>")
