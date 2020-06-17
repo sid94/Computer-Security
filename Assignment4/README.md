@@ -21,18 +21,19 @@ check python version :- python --version
 
 if python version less than 3
 
-python3 server.py
-python3 client.py remote.cs.binghamton.edu
+python3 genpass.py
+python3 verifypass.py 
 
 if python version 3 or greater
 
-python server.py
-python client.py remote.cs.binghamton.edu
+python genpass.py
+python verifypass.py 
 
 ---------------------------------------------------------------------
 
+Anything special about submission
 
- 
+Genpass program will continuously be running in a loop asking the user to add more and more id and passwords.
 
-
+verify pass will verify the id and password with the data stored in the password file
 
