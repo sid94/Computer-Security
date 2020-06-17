@@ -28,7 +28,7 @@ class Server:
             userid = securesocket.recv(1024)
             rawpassword = securesocket.recv(1024)
             
-            print(f"Userid : {userid} and Password : {rawpassword} received")
+            print(f"Userid : {userid.decode('utf-8')} and Password : {rawpassword.decode('utf-8')} received")
             
             if(userid and rawpassword):
                 if(userid.decode('utf-8') in self.password and self.password[str(userid.decode('utf-8'))] == str(rawpassword.decode('utf-8'))):
