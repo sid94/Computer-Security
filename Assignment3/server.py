@@ -35,7 +35,8 @@ class Server:
                     securesocket.send(bytes("correct ID and password","utf-8"))
                 else:
                     securesocket.send(bytes("incorrect ID and password","utf-8"))
-    
+            
+            self.s.close()
             securesocket.close()
         
 
