@@ -30,6 +30,7 @@ class Client:
         print(reply.decode("utf-8"))
 
         #close connection
+        self.s.close()
         securesocket.close()
 
 if __name__ == '__main__':
