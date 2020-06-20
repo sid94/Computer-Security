@@ -32,7 +32,16 @@ python client.py remote.cs.binghamton.edu
 ---------------------------------------------------------------------
 
 
- 
+ Certificate genration provide in gencert.txt file
+
+ flow 
+
+ 1. run the server first
+ 2. then client
+ 3. enter id and password asked in client terminal
+ 4. server will receive the entered credentials and respond with the verification of those credentials
+ 5. client will receive the message
+ 6. client and server terminates 
 
 
 
