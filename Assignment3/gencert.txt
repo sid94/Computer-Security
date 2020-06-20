@@ -1,10 +1,11 @@
 # Have openssl installed in your work station (pip install pyopenssl).
 
-# Run this below command in the dir where you want the private key and certificate to be genrated for the server use.
+# Run this below command in the dir where you want the private key and certificate to be genrated for the server and client use.
 
 # Tip: if not working using the windows cmd prompt use git bash terminal
 
-# Added all the interative command in the command itself or also a hack in -subj "//C=US/C=US....." this show a command req: Skipping unknown attribute "/C" but it will skip the first one 
+# This command will generate priv.key and sign the certificate with that private key and 
+also a hack in -subj "//C=US/C=US....." this show a command req: Skipping unknown attribute "/C" but it will skip the first one 
 
 # Command
 
