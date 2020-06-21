@@ -9,9 +9,9 @@ class Server:
     def __init__(self):
         tcp =  Socket()
         readfile = ReadFile()
-        self.s = tcp.getSocket()
         self.password = {} 
         self.password = readfile.getPasswordData()
+        self.s = tcp.getSocket()
         self.s.bind((socket.gethostname(), 1234))
         self.s.listen(5)
         
