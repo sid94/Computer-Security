@@ -35,5 +35,5 @@ Anything special about submission
 
 Genpass program will continuously be running in a loop asking the user to add more and more id and passwords.
 
-verify pass will verify the id and password with the data stored in the password file
+verify pass will verify the id and password with the data stored in the password file and give out the result. Once the result is displayed the program will exit. 
 

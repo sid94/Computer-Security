@@ -39,7 +39,7 @@ class VerifyPass:
             else:
                 print("password is incorrect")
         else:
-            print("User doesnot exist")
+            print("ID does not exist.")
         
         sys.exit()
         
