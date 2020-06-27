@@ -12,14 +12,16 @@ class GenPass():
         self.acceptkey()
         
     def acceptkey(self):
-        
-        while True:
-            print("please enter User Id")
-            userid = input()
-            print("please enter password")
-            password  = input()
-            self.writetofile(userid,password)
-            print("\nEnter next id and password to be Generated\n")
+        try:
+            while True:
+                print("please enter User Id")
+                userid = input()
+                print("please enter password")
+                password  = input()
+                self.writetofile(userid,password)
+                print("\nEnter next id and password to be Generated\n")
+        except KeyboardInterrupt:
+            print("genpass exited!!")
         
     def writetofile(self,id,password):
         writetype = None
