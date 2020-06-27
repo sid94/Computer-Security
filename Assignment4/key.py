@@ -21,6 +21,7 @@ class Key:
                 file.close()
         except:
             print("error occured during key read")
+            sys.exit()
         
     def getkey(self):
         return self.key
